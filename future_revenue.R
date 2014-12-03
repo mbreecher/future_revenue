@@ -4,7 +4,7 @@ source("revenue_future_projects.r")
 #import scrubbed and updated project time data
 project_time <- get_revenue_data()
 
-project_time <- project_time[project_time$filing.estimate >= Sys.Date(),] #future only
+project_time <- project_time[project_time$Quarter.End >= Sys.Date(),] #future only
 #remove those without opportunity info (no price information) impact is small (28/1880)
 project_time <- project_time[!is.na(project_time$opportunity_id) & !project_time$opportunity_id %in% c("") &
                                !is.na(project_time$sales_price),]
