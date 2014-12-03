@@ -12,9 +12,9 @@ project_time <- project_time[!is.na(project_time$opportunity_id) & !project_time
 project_time <- project_time[,!names(project_time) %in% c("Goodwill.Hours.Available", "reportingOffset", "opportunity_id", "filingPeriod", "Opportunity.18.Digit.Id")]
 
 #make list price sales price if list price == 0
-project_time[project_time$sales_price %in% 0,]$sales_price <- project_time[project_time$sales_price %in% 0,]$list_price
+# project_time[project_time$sales_price %in% 0,]$sales_price <- project_time[project_time$sales_price %in% 0,]$list_price
 #make list price sales price if sales price > list
-project_time[project_time$list_price < project_time$sales_price,]$list_price <- project_time[project_time$list_price < project_time$sales_price,]$sales_price
+# project_time[project_time$list_price < project_time$sales_price,]$list_price <- project_time[project_time$list_price < project_time$sales_price,]$sales_price
 
 
 setwd("C:/R/workspace/future_revenue/output")
