@@ -1,3 +1,5 @@
+library('plyr')
+library('reshape2')
 setwd("C:/R/workspace/shared")
 source("revenue_future_projects.r")
 
